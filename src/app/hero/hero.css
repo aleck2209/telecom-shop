@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.hero {
+  background-image: var(--gradient-brand);
+  color: var(--color-surface);
+  padding-block: clamp(var(--space-6), 4rem + 4vw, 7rem);
+}
+
+.hero-title {
+  max-width: 18ch;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  max-width: 48ch;
+  margin: 0 0 var(--space-5);
+  font-size: 1.125em;
+  opacity: 0.9;
+}
