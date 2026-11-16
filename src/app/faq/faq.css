@@ -1,0 +1,70 @@
+:host {
+  display: block;
+}
+
+.faq {
+  padding-block: var(--space-5) var(--space-6);
+}
+
+.faq h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Colonne de questions, limitée en largeur pour garder des lignes lisibles */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 48rem;
+}
+
+.faq-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* La question : on remplace le triangle par défaut du navigateur par un « + » à droite */
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question:hover {
+  color: var(--color-accent-strong);
+}
+
+.faq-question::after {
+  content: '+';
+  flex-shrink: 0;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/* Question ouverte : le « + » pivote pour former une croix */
+.faq-item[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  margin: 0;
+  padding: 0 var(--space-4) var(--space-4);
+  color: var(--color-text-muted);
+}

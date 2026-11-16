@@ -1,7 +1,8 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
+  imports: [NgOptimizedImage],
   selector: 'app-hero',
   styleUrl: './hero.css',
   templateUrl: './hero.html',
@@ -11,4 +12,5 @@ export class Hero {
   subtitle: string = 'Des offres mobiles simples, sans engagement, activées en quelques minutes.';
   ctaLabel: string = 'Voir les forfaits';
   ctaTarget: string = '#forfaits';
+  illustrationUrl = 'hero-illustration.svg';
 }

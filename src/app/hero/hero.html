@@ -1,7 +1,10 @@
 <section class="hero">
-    <div class="container">
-        <h1 class="hero-title">{{title}}</h1>
-        <p class="hero-subtitle">{{subtitle}}</p>
-        <a [href]="ctaTarget" class="btn btn-light">{{ctaLabel}}</a>
+  <div class="container hero-layout">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ title }}</h1>
+      <p class="hero-subtitle">{{ subtitle }}</p>
+      <a [href]="ctaTarget" class="btn btn-light">{{ ctaLabel }}</a>
     </div>
+    <img [ngSrc]="illustrationUrl" width="480" height="400" class="hero-image" alt="" priority />
+  </div>
 </section>

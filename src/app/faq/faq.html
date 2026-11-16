@@ -1,0 +1,13 @@
+<section class="faq">
+    <div class="container">
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+            @for (item of items; track item.id) {
+                <details class="faq-item">
+                    <summary class="faq-question">{{item.question}}</summary>
+                    <p class="faq-answer">{{item.answer}}</p>
+                </details>
+            }
+        </div>
+    </div>
+</section>

@@ -2,6 +2,13 @@
 <main>
   <app-hero></app-hero>
   <app-plan-list></app-plan-list>
+  @defer(on viewport) {
+    <app-faq />
+  } @placeholder {
+    <p class="defer-placeholder">Les questions fréquentes s'afficheront ici.</p>
+  } @loading (minimum 1s) {
+    <p class="defer-placeholder">Chargement des questions...</p>
+  }
   <router-outlet />
 </main>
 <app-footer></app-footer>

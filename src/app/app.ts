@@ -4,9 +4,10 @@ import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { Hero } from './hero/hero';
 import { PlanList } from './plan-list/plan-list';
+import { Faq } from './faq/faq';
 
 @Component({
-  imports: [RouterOutlet, Header, Footer, Hero, PlanList],
+  imports: [RouterOutlet, Header, Footer, Hero, PlanList, Faq],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
