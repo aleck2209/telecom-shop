@@ -15,6 +15,12 @@
   color: var(--color-text-muted);
 }
 
+/* Champ de recherche : largeur limitée, pour ne pas s'étirer sur tout l'écran */
+.plans-search {
+  max-width: 24rem;
+  margin-bottom: var(--space-4);
+}
+
 .empty-state {
   margin: var(--space-4) 0 0;
   padding: var(--space-5);

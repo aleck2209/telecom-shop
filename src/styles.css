@@ -7,6 +7,7 @@
   --color-text: #0f172a;
   --color-text-muted: #475569;
   --color-border: #e2e8f0;
+  --color-border-strong: #94a3b8;
   --color-accent: #2563eb;
   --color-accent-strong: #1d4ed8;
   --color-accent-deep: #1e3a8a;
@@ -116,6 +117,46 @@ img {
   margin: 0 0 var(--space-5);
   color: var(--color-text-muted);
   font-size: 1.125em;
+}
+
+/* Formulaires : un champ = un libellé, une zone de saisie, et parfois une ligne d'aide */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field-label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.input:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.field-hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
 }
 
 .btn {

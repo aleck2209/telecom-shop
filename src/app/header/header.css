@@ -24,4 +24,30 @@
   font-size: 1.25rem;
   letter-spacing: -0.01em;
   color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Navigation principale : liens alignés à droite de la marque */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.nav-link {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.nav-link:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
