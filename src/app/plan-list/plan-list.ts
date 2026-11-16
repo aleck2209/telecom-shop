@@ -8,5 +8,10 @@ import { Plan, PLANS } from '../plan';
   templateUrl: './plan-list.html',
 })
 export class PlanList {
-  plans: Plan[] = PLANS
+  plans: Plan[] = PLANS;
+  selectedPlan: Plan | null = null;
+
+  selectPlan(plan: Plan) {
+      this.selectedPlan = plan
+  }
 }

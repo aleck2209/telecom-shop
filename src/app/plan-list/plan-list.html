@@ -1,8 +1,11 @@
-<section class="plans">
+<section class="plans" id="forfaits">
     <div class="container">
         <h2>Nos forfaits</h2>
         @if (plans.length > 0) {
             <p class="plans-count">{{plans.length}} forfaits disponibles</p>
+            @if (selectedPlan) {
+                <p class="plans-selection">Forfait sélectionné : {{selectedPlan.name}}</p>
+            }
             <ul class="plans-grid">
                 @for(plan of plans; track plan.id) {
                     <li class="plan-card">
@@ -10,6 +13,7 @@
                         <p class="plan-description">{{plan.description}}</p>
                         <p class="plan-price">{{plan.price}} FCFA</p>
                         <p class="plan-meta">{{plan.dataMb}} Mo · {{plan.validityDays}} jours</p>
+                        <button type="button" class="btn btn-primary plan-select" (click)="selectPlan(plan)">Choisir</button>
                         @if (plan.promo) {
                             <span class="badge-promo">Promo</span>
                         }

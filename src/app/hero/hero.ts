@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './hero.html',
 })
 export class Hero {
-  title = 'Le forfait qui vous ressemble';
-  subtitle = 'Des offres mobiles simples, sans engagement, activées en quelques minutes.';
-  ctaLabel = 'Voir les forfaits';
+  title: string = 'Le forfait qui vous ressemble';
+  subtitle: string = 'Des offres mobiles simples, sans engagement, activées en quelques minutes.';
+  ctaLabel: string = 'Voir les forfaits';
+  ctaTarget: string = '#forfaits';
 }
