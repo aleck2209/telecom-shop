@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Plan, PLANS } from '../plan';
+import { PlanCard } from '../plan-card/plan-card';
 
 @Component({
-  imports: [],
+  imports: [PlanCard],
   selector: 'app-plan-list',
   styleUrl: './plan-list.css',
   templateUrl: './plan-list.html',

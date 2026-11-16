@@ -1,0 +1,65 @@
+/* L'élément <app-plan-card> occupe toute la hauteur de sa cellule de grille */
+:host {
+  display: block;
+  height: 100%;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.plan-name {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.plan-description {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.plan-price {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.plan-meta {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Bouton « Choisir » : poussé en bas de la carte, quelle que soit la longueur du texte */
+.plan-select {
+  margin-top: auto;
+  align-self: stretch;
+}
+
+.badge-promo {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  background-image: var(--gradient-brand);
+  color: var(--color-surface);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

@@ -7,3 +7,18 @@
 main {
   flex: 1;
 }
+
+/* Emplacement réservé d'un contenu chargé plus tard (blocs @placeholder et @loading) */
+.defer-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100% - 2 * var(--space-3), var(--container-max));
+  min-height: 12rem;
+  margin: var(--space-6) auto;
+  padding: var(--space-5) var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+<article class="plan-card">
+  <h3 class="plan-name">{{ plan().name }}</h3>
+  <p class="plan-description">{{ plan().description }}</p>
+  <p class="plan-price">{{ plan().price }} FCFA</p>
+  <p class="plan-meta">{{ plan().dataMb }} Mo · {{ plan().validityDays }} jours</p>
+  <button type="button" class="btn btn-primary plan-select" (click)="choose()">
+    Choisir
+  </button>
+  @if (plan().promo) {
+    <span class="badge-promo">Promo</span>
+  }
+</article>
