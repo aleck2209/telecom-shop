@@ -13,6 +13,7 @@
   --color-accent-deep: #1e3a8a;
   --gradient-brand: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
   --color-success: #059669;
+  --color-success-soft: #ecfdf5;
   --color-error: #dc2626;
 
   /* Font Family */
@@ -142,6 +143,12 @@ img {
   color: var(--color-text);
   font: inherit;
   transition: border-color var(--duration-fast) ease;
+}
+
+/* Zone de texte sur plusieurs lignes : redimensionnable en hauteur seulement */
+textarea.input {
+  min-height: 8rem;
+  resize: vertical;
 }
 
 .input::placeholder {

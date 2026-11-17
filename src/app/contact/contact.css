@@ -1,3 +1,36 @@
 :host {
   display: block;
 }
+
+/* Le formulaire : une carte blanche, champs empilés, largeur limitée pour la lisibilité */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 36rem;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 640px) {
+  .contact-form {
+    padding: var(--space-5);
+  }
+}
+
+/* Le bouton garde sa largeur naturelle au lieu de s'étirer sur toute la carte */
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+/* Confirmation d'envoi : même bordure verte que « Forfait sélectionné », sur fond vert pâle */
+.form-success {
+  margin: 0;
+  padding: var(--space-3);
+  border-left: 4px solid var(--color-success);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-success-soft);
+}
