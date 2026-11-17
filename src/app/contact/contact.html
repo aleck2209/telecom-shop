@@ -1,6 +1,39 @@
 <section class="page">
-    <div class="container">
-        <h1>Contact</h1>
-        <p class="page-intro">Une question sur nos forfaits ? Écrivez-nous, nous répondons sous 24 heures.</p>
-    </div>
+  <div class="container">
+    <h1>Contact</h1>
+    <p class="page-intro">
+      Une question sur nos forfaits ? Écrivez-nous, nous répondons sous 24 heures.
+    </p>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="send()">
+      <div class="field">
+        <label for="contact-name" class="field-label">Votre nom</label>
+        <input class="input" type="text" id="contact-name" formControlName="name" />
+        @if (contactForm.controls.name.invalid  && contactForm.controls.name.touched){
+          <p class="field-error">Indiquez votre nom.</p>
+        }
+      </div>
+      <div class="field">
+        <label for="contact-email" class="field-label">Votre adresse e-mail</label>
+        <input class="input" type="email" id="contact-email" formControlName="email" />
+        @if (contactForm.controls.email.invalid && contactForm.controls.email.touched) {
+            <p class="field-error">Indiquez une adresse e-mail valide.</p>
+        }
+      </div>
+      <div class="field">
+        <label for="contact-message" class="field-label">Votre message</label>
+        <textarea class="input" id="contact-message" rows="5" formControlName="message"></textarea>
+        @if (contactForm.controls.message.invalid && contactForm.controls.message.touched) {
+            <p class="field-error">Votre message doit contenir au moins 10 caractères.</p>
+        }
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">
+        Envoyer
+      </button>
+    </form>
+    @if (sent) {
+      <p class="form-success" role="status">
+        Merci ! Nous vous répondrons à l'adresse {{ contactForm.value.email }}.
+      </p>
+    }
+  </div>
 </section>

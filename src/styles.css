@@ -160,6 +160,21 @@ textarea.input {
   border-color: var(--color-accent);
 }
 
+/* Champ en erreur : Angular ajoute ng-invalid (règle non respectée) et ng-touched (champ quitté) */
+.input.ng-invalid.ng-touched {
+  border-color: var(--color-error);
+}
+
+.input.ng-invalid.ng-touched:focus-visible {
+  outline-color: var(--color-error);
+}
+
+.field-error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 0.875rem;
+}
+
 .field-hint {
   margin: 0;
   color: var(--color-text-muted);
