@@ -4,6 +4,9 @@
     <p class="page-intro">
       Une question sur nos forfaits ? Écrivez-nous, nous répondons sous 24 heures.
     </p>
+    @if (store.selectedPlan) {
+        <p class="contact-plan">Forfait concerné : {{store.selectedPlan.name}}</p>
+    }
     <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="send()">
       <div class="field">
         <label for="contact-name" class="field-label">Votre nom</label>

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { Plan, PLANS } from '../plan';
+import { Component, inject } from '@angular/core';
+import { Plan } from '../plan';
 import { PlanCard } from '../plan-card/plan-card';
 import { FormsModule } from '@angular/forms';
+import { PlanStore } from '../plan-store';
 
 @Component({
   imports: [PlanCard, FormsModule],
@@ -10,16 +11,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './plan-list.html',
 })
 export class PlanList {
-  plans: Plan[] = PLANS;
-  selectedPlan: Plan | null = null;
   searchTerm: string = '';
-
-  selectPlan(plan: Plan) {
-    this.selectedPlan = plan;
-  }
+  store = inject(PlanStore)
 
   get filteredPlans(): Plan[] {
-    return this.plans.filter((plan) =>
+    return this.store.plans.filter((plan) =>
       plan.name.toLowerCase().includes(this.searchTerm.toLowerCase().trim()),
     );
   }

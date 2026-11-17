@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PlanStore } from '../plan-store';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -15,6 +16,7 @@ export class Contact {
   });
 
   sent: boolean = false;
+  store = inject(PlanStore)
 
   send(): void {
     this.sent = true;

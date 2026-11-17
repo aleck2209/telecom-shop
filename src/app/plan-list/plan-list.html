@@ -1,20 +1,20 @@
 <section class="plans" id="forfaits">
     <div class="container">
         <h2>Nos forfaits</h2>
-        @if (plans.length > 0) {
-            <p class="plans-count">Forfaits affichés : {{filteredPlans.length}} sur {{plans.length}}</p>
+        @if (store.plans.length > 0) {
+            <p class="plans-count">Forfaits affichés : {{filteredPlans.length}} sur {{store.plans.length}}</p>
             <div class="field plans-search">
                 <label for="plan-search" class="field-label">Rechercher un forfait</label>
                 <input type="search" class="input" id="plan-search" placeholder="Ex. : Hebdo" [(ngModel)]="searchTerm"/>
             </div>
-            @if (selectedPlan) {
-                <p class="plans-selection">Forfait sélectionné : {{selectedPlan.name}}</p>
+            @if (store.selectedPlan) {
+                <p class="plans-selection">Forfait sélectionné : {{store.selectedPlan.name}}</p>
             }
             @if(filteredPlans.length > 0) {
                 <ul class="plans-grid">
                     @for(plan of filteredPlans; track plan.id) {
                         <li>
-                            <app-plan-card [plan]="plan" (selected)="selectPlan($event)"/>
+                            <app-plan-card [plan]="plan" (selected)="store.select($event)"/>
                         </li>
                     }
                 </ul>
