@@ -120,6 +120,33 @@ img {
   font-size: 1.125em;
 }
 
+/* Badge « Promo » : placé dans le coin d'un parent en position: relative (carte, fiche détail) */
+.badge-promo {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  background-image: var(--gradient-brand);
+  color: var(--color-surface);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Message d'absence de contenu : liste vide, recherche sans résultat, forfait introuvable */
+.empty-state {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
 /* Formulaires : un champ = un libellé, une zone de saisie, et parfois une ligne d'aide */
 .field {
   display: flex;

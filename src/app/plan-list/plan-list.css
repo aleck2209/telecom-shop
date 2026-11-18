@@ -21,15 +21,6 @@
   margin-bottom: var(--space-4);
 }
 
-.empty-state {
-  margin: var(--space-4) 0 0;
-  padding: var(--space-5);
-  border: 1px dashed var(--color-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
-  text-align: center;
-}
-
 /* Grille : 1 colonne sur mobile, 2 dès 640px, 3 dès 1024px */
 .plans-grid {
   display: grid;

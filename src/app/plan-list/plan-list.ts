@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Plan } from '../plan';
 import { PlanCard } from '../plan-card/plan-card';
 import { FormsModule } from '@angular/forms';
@@ -11,12 +11,18 @@ import { PlanStore } from '../plan-store';
   templateUrl: './plan-list.html',
 })
 export class PlanList {
-  searchTerm: string = '';
-  store = inject(PlanStore)
+  searchTerm = signal('');
+  store = inject(PlanStore);
 
-  get filteredPlans(): Plan[] {
+  // filteredPlans(): Plan[] {
+  //   return this.store.plans.filter((plan) =>
+  //     plan.name.toLowerCase().includes(this.searchTerm().toLowerCase().trim()),
+  //   );
+  // }
+
+  filteredPlans = computed(() => {
     return this.store.plans.filter((plan) =>
-      plan.name.toLowerCase().includes(this.searchTerm.toLowerCase().trim()),
+      plan.name.toLowerCase().includes(this.searchTerm().toLowerCase().trim()),
     );
-  }
+  });
 }
