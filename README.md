@@ -1,59 +1,50 @@
 # TelecomShop
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.3.
+Catalogue de forfaits mobiles en Angular 22. C'est un projet d'apprentissage, construit en parallèle du tutoriel officiel [Learn Angular](https://angular.dev/tutorials/learn-angular) : chaque leçon y est appliquée.
 
-## Development server
-
-To start a local development server, run:
+## Lancer le projet
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Puis ouvrir `http://localhost:4200/`.
 
-## Code scaffolding
+## Pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Adresse | Contenu |
+|---|---|
+| `/` | Présentation, forfaits avec recherche et sélection, questions fréquentes |
+| `/contact` | Formulaire de contact validé, rappel du forfait sélectionné |
 
-```bash
-ng generate component component-name
+## Structure
+
+```
+src/app/
+├── header/, footer/       En-tête avec navigation, pied de page
+├── home/                  Page d'accueil
+├── hero/                  Bandeau de présentation
+├── plan-list/             Liste des forfaits et recherche
+├── plan-card/             Carte d'un forfait
+├── faq/                   Questions fréquentes (chargement différé)
+├── contact/               Page Contact
+├── plan.ts, faq-item.ts   Données
+├── plan-store.ts          Service : forfaits et forfait sélectionné
+└── data-volume-pipe.ts    Pipe : Mo → Go
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Notions appliquées
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Notion | Où |
+|---|---|
+| Composants, interpolation, `@if`, `@for` | `hero`, `plan-list`, `faq` |
+| Liaison de propriété, événements | `[href]` du `hero`, bouton « Choisir » |
+| Entrées et sorties | `plan-card` (`input.required`, `output`) |
+| Chargement différé | `@defer (on viewport)` dans `home` |
+| Images optimisées | `NgOptimizedImage` dans `hero` |
+| Routage | `app.routes.ts`, `RouterLink` dans `header` |
+| Formulaires | recherche avec `ngModel`, contact avec un formulaire réactif et `Validators` |
+| Services, injection | `PlanStore` injecté avec `inject()` |
+| Pipes | `currency`, `date` (locale `fr`), pipe `dataVolume` |
+| Signaux (hors tutoriel) | `signal` et `computed` dans `plan-store` et `plan-list` |
