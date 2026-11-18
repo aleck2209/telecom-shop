@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PlanStore } from '../plan-store';
+import { DatePipe } from '@angular/common';
 
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DatePipe],
   selector: 'app-contact',
   styleUrl: './contact.css',
   templateUrl: './contact.html',
@@ -15,10 +16,10 @@ export class Contact {
     message: new FormControl('', [Validators.required, Validators.minLength(10)])
   });
 
-  sent: boolean = false;
+  sentAt: Date | null = null;
   store = inject(PlanStore)
 
   send(): void {
-    this.sent = true;
+    this.sentAt = new Date();
   }
 }

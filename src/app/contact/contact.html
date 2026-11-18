@@ -33,9 +33,9 @@
         Envoyer
       </button>
     </form>
-    @if (sent) {
+    @if (sentAt) {
       <p class="form-success" role="status">
-        Merci ! Nous vous répondrons à l'adresse {{ contactForm.value.email }}.
+        Merci ! Nous vous répondrons à l'adresse {{ contactForm.value.email }}. Message envoyé le {{sentAt | date : `d MMMM y 'à' HH:mm`}}.
       </p>
     }
   </div>
